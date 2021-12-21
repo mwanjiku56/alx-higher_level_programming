@@ -1,16 +1,10 @@
 #!/usr/bin/python3
-""" Program that Read n lines """
+""" Program that appends a string at tne end of a text file """
 
 
-def read_lines(filename="", nb_lines=0):
-    """ function that reads n lines of a text file (UTF8) and
-    prints it to stdout """
-    count = 0
-    with open(filename, encoding='utf-8') as f:
-        if (nb_lines <= 0):
-            print(f.read(), end='')
-        for line in f:
-            if (count < nb_lines):
-                print(line, end='')
-                count += 1
-                
+def append_write(filename="", text=""):
+    """ function that appends a string at the end of a text file (UTF8) and
+    returns the number of characters added """
+    with open(filename, 'a', encoding='utf-8') as f:
+        return (f.write(text))
+        
